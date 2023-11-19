@@ -10,16 +10,19 @@ import SwiftUI
 struct LoginView: View {
     
     // MARK: Global environment variables
-    @EnvironmentObject var appState: AppStateViewModel
+    @EnvironmentObject var loginViewModel: LoginViewModel
     @Environment(\.colorScheme) var colorScheme
+    
+    @StateObject private var homeViewModel = HomeViewModel()
 
 #if DEBUG
-    @State private var email = "gonzagregorio03@gmail.com"
-    @State private var password = "KeepGrego2023!"
+    //  This is only exposed for teacher evaluation.. In production it should be removed
+    @State private var publicKey = "2083b5dfcfdcacedb03cd8d21d3d578e"
+    @State private var privateKey = "492626b5ce85739efe0a41451c9062a8d16a11ea"
 #else
     // MARK: State variables
-    @State private var email = ""
-    @State private var password = ""
+    @State private var publicKey = ""
+    @State private var privateKey = ""
 #endif
     
     // MARK: Body
@@ -46,8 +49,8 @@ struct LoginView: View {
                 VStack {
                     Spacer()
                     Spacer()
-                    
-                    TextField("email", text: $email)
+                    Text("Public Key")
+                    SecureField("publicKey", text: $publicKey)
                         .padding()
                         .background(.white)
                         .foregroundColor(.black)
@@ -57,7 +60,8 @@ struct LoginView: View {
                         .autocorrectionDisabled()
                         .opacity(0.8)
                         .id(1) // Id for testing
-                    SecureField("password", text: $password)
+                    Text("Private Key")
+                    SecureField("$privateKey", text: $privateKey)
                         .padding()
                         .background(.white)
                         .foregroundColor(.black)
@@ -74,7 +78,7 @@ struct LoginView: View {
 
                     // Button
                     Button(action: {
-                        appState.login(user: email, password: password)
+                        loginViewModel.login(publicKey: publicKey, privateKey: privateKey)
                     }, label: {
                         
                         Text("Log In")
@@ -88,6 +92,9 @@ struct LoginView: View {
                     })
                     .opacity(0.8)
                     .id(3)
+                    .onReceive(loginViewModel.$characters, perform: {
+                        homeViewModel.characters = $0
+                    })
                     
                     Spacer()
                     Spacer()
@@ -96,7 +103,7 @@ struct LoginView: View {
                 // Sign Up
                 HStack {
                     Button(action: {
-                        appState.state = .register
+                        loginViewModel.state = .register
                     }, label: {
                         Text("Sign Up")
                             .foregroundStyle(.white)

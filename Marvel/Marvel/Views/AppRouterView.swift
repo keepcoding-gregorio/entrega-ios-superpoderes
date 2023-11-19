@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppRouterView: View {
-    @EnvironmentObject var appStateViewModel: AppStateViewModel
+    @EnvironmentObject var appStateViewModel: LoginViewModel
     
     var body: some View {
         switch appStateViewModel.state {
@@ -38,5 +38,5 @@ struct AppRouterView: View {
 
 #Preview {
     AppRouterView()
-        .environmentObject(AppStateViewModel())
+        .environmentObject(LoginViewModel())
 }

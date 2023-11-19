@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
-    var character: CharacterModel
+    var character: Character
     //@ObservedObject var viewModelHeros: viewModelHeros
     
     var body: some View {
@@ -22,27 +22,27 @@ struct CharacterDetailView: View {
                 Button(action: {
                     
                 }, label: {
-                    if (character.favorite!){
-                        Image(systemName: "heart.circle")
-                            .resizable()
-                            .foregroundColor(.red)
-                            .frame(width: 40, height: 40)
-                            .padding([.leading], 10)
-                        
-                    } else{
-                        Image(systemName: "heart.circle")
-                            .resizable()
-                            .foregroundColor(.gray)
-                            .frame(width: 40, height: 40)
-                            .padding([.leading], 10)
-                    }
+//                    if (character.favorite!){
+//                        Image(systemName: "heart.circle")
+//                            .resizable()
+//                            .foregroundColor(.red)
+//                            .frame(width: 40, height: 40)
+//                            .padding([.leading], 10)
+//                        
+//                    } else{
+//                        Image(systemName: "heart.circle")
+//                            .resizable()
+//                            .foregroundColor(.gray)
+//                            .frame(width: 40, height: 40)
+//                            .padding([.leading], 10)
+//                    }
                 })
                 //Me gusta
             }
             .padding([.leading, .trailing], 10)
             
             //Foto del heroe
-            AsyncImage(url: URL(string: character.photo)) { photo in
+            AsyncImage(url: URL(string: character.thumbnail.path)) { photo in
                 //foto descargada
                 photo
                     .resizable()
@@ -68,5 +68,10 @@ struct CharacterDetailView: View {
 }
 
 #Preview {
-    CharacterDetailView(character: CharacterModel(id: UUID(), name: "Goku", description: "Sobran las presentaciones cuando se habla de Goku. El Saiyan fue enviado al planeta Tierra, pero hay dos versiones sobre el origen del personaje. Según una publicación especial, cuando Goku nació midieron su poder y apenas llegaba a dos unidades, siendo el Saiyan más débil. Aun así se pensaba que le bastaría para conquistar el planeta. Sin embargo, la versión más popular es que Freezer era una amenaza para su planeta natal y antes de que fuera destruido, se envió a Goku en una incubadora para salvarle.", photo: "https://cdn.alfabetajuega.com/alfabetajuega/2020/12/goku1.jpg?width=300", favorite: true))
+    Group {
+        let mockedCharacter = Character(id: 1017100, name: "A-Bomb (HAS)", description: "Rick Jones has been Hulk's best bud since day one, but now he's more than a friend...he's a teammate! Transformed by a Gamma energy explosion, A-Bomb's thick, armored skin is just as strong and powerful as it is blue. And when he curls into action, he uses it like a giant bowling ball of destruction!", thumbnail: Thumbnail(path: "http://i.annihil.us/u/prod/marvel/i/mg/3/20/5232158de5b16", thumbnailExtension: Extension.jpg))
+        
+        CharacterDetailView(character: mockedCharacter)
+    }
+
 }

@@ -1,13 +1,13 @@
+////
+////  DataModel.swift
+////  Marvel
+////
+////  Created by Gonzalo Gregorio on 18/11/2023.
+////
 //
-//  DataModel.swift
-//  Marvel
+//import Foundation
 //
-//  Created by Gonzalo Gregorio on 18/11/2023.
-//
-
-import Foundation
-
-struct DataModel: Codable {
-    let offset, limit, total, count: Int
-    let results: [CharacterModel]
-}
+//struct DataModel: Codable {
+//    let offset, limit, total, count: Int
+//    let results: [Character]
+//}

@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol CharactersInteractorProtocol: AnyObject {
-    func getCharacters(filter: String) -> AnyPublisher<[CharacterModel], Error>
+    func login(publicKey: String, privateKey: String) -> AnyPublisher<MarvelResponseModel, Error>
 }

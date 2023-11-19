@@ -48,7 +48,7 @@
 		D6EA36042B031F3C0023C461 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D6EA36032B031F3C0023C461 /* Localizable.xcstrings */; };
 		D6EA36072B0320600023C461 /* KeyChainDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA36062B0320600023C461 /* KeyChainDataProvider.swift */; };
 		D6EA360A2B0320940023C461 /* SecureDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA36092B0320940023C461 /* SecureDataProviderProtocol.swift */; };
-		D6EA360E2B03272F0023C461 /* AppStateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA360D2B03272F0023C461 /* AppStateViewModel.swift */; };
+		D6EA360E2B03272F0023C461 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA360D2B03272F0023C461 /* LoginViewModel.swift */; };
 		D6EA36132B0389430023C461 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA36122B0389430023C461 /* AppState.swift */; };
 		D6EA36162B038AC90023C461 /* MarvelDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA36152B038AC90023C461 /* MarvelDataProvider.swift */; };
 		D6EA361A2B038B580023C461 /* MarvelApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EA36192B038B580023C461 /* MarvelApiEndpoint.swift */; };
@@ -121,7 +121,7 @@
 		D6EA36032B031F3C0023C461 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		D6EA36062B0320600023C461 /* KeyChainDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainDataProvider.swift; sourceTree = "<group>"; };
 		D6EA36092B0320940023C461 /* SecureDataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProviderProtocol.swift; sourceTree = "<group>"; };
-		D6EA360D2B03272F0023C461 /* AppStateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateViewModel.swift; sourceTree = "<group>"; };
+		D6EA360D2B03272F0023C461 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D6EA36122B0389430023C461 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D6EA36152B038AC90023C461 /* MarvelDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDataProvider.swift; sourceTree = "<group>"; };
 		D6EA36192B038B580023C461 /* MarvelApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiEndpoint.swift; sourceTree = "<group>"; };
@@ -163,6 +163,23 @@
 				D65F44E02B089F9A00601C70 /* extension+view.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D65F44E22B093CFE00601C70 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D6EA360D2B03272F0023C461 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D65F44E32B093D0800601C70 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D69D38182B062B7E00F89BF8 /* HomeViewModel.swift */,
+				D6BA877E2B088A59000D19DC /* Interactors */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		D69D380E2B04F40F00F89BF8 /* Resources */ = {
@@ -340,9 +357,8 @@
 		D6EA35F42B03163D0023C461 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D6EA360D2B03272F0023C461 /* AppStateViewModel.swift */,
-				D6BA877E2B088A59000D19DC /* Interactors */,
-				D69D38182B062B7E00F89BF8 /* HomeViewModel.swift */,
+				D65F44E22B093CFE00601C70 /* Login */,
+				D65F44E32B093D0800601C70 /* Home */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -574,7 +590,7 @@
 				D6BA87712B08816E000D19DC /* StoriesItem.swift in Sources */,
 				D6BA877D2B088974000D19DC /* CharactersInteractorProtocol.swift in Sources */,
 				D69D38172B05CB5800F89BF8 /* CharacterModel.swift in Sources */,
-				D6EA360E2B03272F0023C461 /* AppStateViewModel.swift in Sources */,
+				D6EA360E2B03272F0023C461 /* LoginViewModel.swift in Sources */,
 				D6BA875E2B088014000D19DC /* MarvelResponseModel.swift in Sources */,
 				D6EA36132B0389430023C461 /* AppState.swift in Sources */,
 				D6EA360A2B0320940023C461 /* SecureDataProviderProtocol.swift in Sources */,

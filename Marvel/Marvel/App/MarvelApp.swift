@@ -12,7 +12,7 @@ struct MarvelApp: App {
     let persistenceController = PersistenceController.shared
     
     // MARK: Global State
-    @StateObject var appState = AppStateViewModel()
+    @StateObject var appState = LoginViewModel()
     
     var body: some Scene {
         WindowGroup {

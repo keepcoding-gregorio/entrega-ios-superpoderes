@@ -17,7 +17,7 @@ final class CharactersInteractor: CharactersInteractorProtocol {
         self.dataProvider = dataProvider
     }
     
-    func getCharacters(filter: String) -> AnyPublisher<[CharacterModel], Error> {
-        networker.execute(type: [CharacterModel].self, request: dataProvider.getCharacters(filter: filter))
+    func login(publicKey: String, privateKey: String) -> AnyPublisher<MarvelResponseModel, Error> {
+        networker.execute(type: MarvelResponseModel.self, request: dataProvider.login(publicKey: publicKey, privateKey: privateKey))
     }
 }

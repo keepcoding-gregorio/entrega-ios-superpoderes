@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @EnvironmentObject var appStateViewModel: AppStateViewModel
+    @EnvironmentObject var appStateViewModel: LoginViewModel
     
     private var message: String
     
@@ -54,5 +54,5 @@ struct ErrorView: View {
 
 #Preview {
     ErrorView(error: "Test error message")
-        .environmentObject(AppStateViewModel())
+        .environmentObject(LoginViewModel())
 }

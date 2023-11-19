@@ -8,7 +8,7 @@
 import Foundation
 
 enum MarvelApiEndpoint {
-    static let  baseURL = "https://dragonball.keepcoding.education"
-    static let  login = "/api/auth/login"
-    static let  getCharacters = "/api/heros/all"
+    static let  baseURL = "https://gateway.marvel.com/v1/public"
+    static let  getCharacters = "/characters"
+    static let  getSeries = "/series"
 }

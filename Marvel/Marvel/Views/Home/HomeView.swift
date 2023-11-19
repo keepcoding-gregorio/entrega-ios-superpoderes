@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var appStateViewModel: AppStateViewModel
+//    @EnvironmentObject var viewModel: LoginViewModel
     
+//    @StateObject var loginViewModel = LoginViewModel()
     @StateObject var homeViewModel = HomeViewModel()
+    
     
     var body: some View {
         TabView{
             VStack{
                 CharactersView(viewModel: homeViewModel)
+//                CharactersView(viewModel: loginViewModel)
+//                CharactersView()
             }
             .tabItem {
                 Image(systemName: "house")
@@ -27,5 +31,6 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView().environmentObject(AppStateViewModel())
+    HomeView(homeViewModel: HomeViewModel(isTestEnvironment: true))
+//        .environmentObject(LoginViewModel())
 }

@@ -1,13 +1,13 @@
+////
+////  CodingKeys.swift
+////  Marvel
+////
+////  Created by Gonzalo Gregorio on 18/11/2023.
+////
 //
-//  CodingKeys.swift
-//  Marvel
+//import Foundation
 //
-//  Created by Gonzalo Gregorio on 18/11/2023.
-//
-
-import Foundation
-
-enum CodingKeys: String, CodingKey {
-    case path
-    case thumbnailExtension = "extension"
-}
+//enum CodingKeys: String, CodingKey {
+//    case path
+//    case thumbnailExtension = "extension"
+//}

@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CharactersView: View {
+    @EnvironmentObject var loginViewModel: LoginViewModel
+
     @StateObject var viewModel: HomeViewModel
     @State private var filter: String = ""
-    @EnvironmentObject var appStateViewModel: AppStateViewModel
     
     var body: some View {
         NavigationStack {
@@ -32,7 +33,7 @@ struct CharactersView: View {
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        appStateViewModel.closeSession()
+                        loginViewModel.closeSession()
                     }, label: {
                         HStack{
                             Image(systemName: "xmark.circle")
@@ -46,13 +47,15 @@ struct CharactersView: View {
         .searchable(text: $filter,
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: "Find character")
-        .onChange(of: filter) { oldValue, newValue in
-            //Ha cambiado el filtro de busqueda
-            viewModel.getCharacters(filter: newValue)
-        }
+//        .onChange(of: filter) { oldValue, newValue in
+//            //Ha cambiado el filtro de busqueda
+//            appStateViewModel.getCharacters()
+//        }
     }
 }
 
 #Preview {
     CharactersView(viewModel: HomeViewModel(isTestEnvironment: true))
+//    CharactersView(viewModel: HomeViewModel())
+//    CharactersView()
 }

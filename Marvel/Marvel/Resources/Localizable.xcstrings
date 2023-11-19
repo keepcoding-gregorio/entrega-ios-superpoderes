@@ -4,10 +4,14 @@
     "%@" : {
 
     },
+    "$privateKey" : {
+
+    },
     "close" : {
 
     },
     "email" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -59,6 +63,7 @@
 
     },
     "password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -73,6 +78,15 @@
           }
         }
       }
+    },
+    "Private Key" : {
+
+    },
+    "Public Key" : {
+
+    },
+    "publicKey" : {
+
     },
     "Register" : {
 

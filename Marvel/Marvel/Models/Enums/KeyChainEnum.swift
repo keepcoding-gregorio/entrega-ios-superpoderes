@@ -9,4 +9,6 @@ import Foundation
 
 enum KeyChainEnum {
     static let token = "MarvelTokenJWT"
+    static let publicKey = "MarvelPublicKey"
+    static let privateKey = "MarvelPrivateKey"
 }

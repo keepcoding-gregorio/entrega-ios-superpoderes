@@ -17,6 +17,7 @@ final class RequestWorker: RequestProtocol {
                       response.statusCode == 200 else{
                     throw URLError(.badServerResponse)
                 }
+                print("Response Status Code: \(response.statusCode)")
                 return $0.data
             }
             .decode(type: T.self, decoder: JSONDecoder())
